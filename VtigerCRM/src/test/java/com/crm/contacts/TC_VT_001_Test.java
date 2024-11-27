@@ -1,5 +1,8 @@
 package com.crm.contacts;
 
+import java.io.IOException;
+
+import org.apache.poi.EncryptedDocumentException;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -11,11 +14,11 @@ import com.crm.objectrepository.HomePage;
 @Listeners(ListenerUtility.class)
 public class TC_VT_001_Test extends BaseClass{
 	@Test
-	public void clickOnContactsLink()
+	public void clickOnContactsLink() throws EncryptedDocumentException, IOException
 	{
 		hp=new HomePage(driver);
 		hp.getContactsLink().click();
-		Assert.assertNotEquals(driver.getTitle(), "Administrator - Contacts - vtiger CRM 5 - Commercial Open Source CRM","user is not able click on contacts link");
+		Assert.assertNotEquals(driver.getTitle(),eutil.getStringDataFromExcel("Contacts", 1, 1),"user is not able click on contacts link");
 		test.log(Status.PASS, "User is able to click on contacts link");
 		
 	}
