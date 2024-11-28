@@ -100,9 +100,9 @@ public class WebDriverUtility {
 		sel.selectByValue(value);
 	}
 	
-	public void selecDropDoenByVisibleText(WebElement element,String value) {
+	public void selecDropDoenByVisibleText(WebElement element,String text) {
 		Select sel=new Select(element);
-		sel.selectByVisibleText(value);
+		sel.selectByVisibleText(text);
 	}
 	public Alert switchToAlert(WebDriver driver) {
 		return driver.switchTo().alert();

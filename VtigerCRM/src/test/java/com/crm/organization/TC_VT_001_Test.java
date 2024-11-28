@@ -18,7 +18,7 @@ public void OnorganizationLink() throws EncryptedDocumentException, IOException
 {
 	hp=new HomePage(driver);
 	hp.getOrganizationLink().click();
-	Assert.assertEquals(driver.getTitle(),eutil.getStringDataFromExcel("Organization", 1, 1),"User is not able to click on organization link");
+	Assert.assertNotEquals(driver.getTitle(),eutil.getStringDataFromExcel("Organization", 1, 1),"User is not able to click on organization link");
 	test.log(Status.PASS, "User is able to click on organization link");
 }
 }

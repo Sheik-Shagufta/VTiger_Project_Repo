@@ -17,6 +17,8 @@ public class CreateOrganizationPage {
 	private WebElement saveButton;
 	@FindBy(xpath = "//span[@class='dvHeaderText']")
 	private WebElement dvHeaderText;
+	@FindBy(id = "mouseArea_Industry")
+	private WebElement industryText;
 	public CreateOrganizationPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
@@ -37,6 +39,10 @@ public class CreateOrganizationPage {
 
 	public WebElement getDvHeaderText() {
 		return dvHeaderText;
+	}
+
+	public WebElement getIndustryText() {
+		return industryText;
 	}
 	
 }
